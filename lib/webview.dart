@@ -119,7 +119,8 @@ class _WebViewMainState extends State<WebViewMain> {
 
   Future<bool> _isFinishOfApp() async {
     String? currentUrl = await _controller.currentUrl();
-    if (currentUrl.toString() == _urlBase) {
+    if (currentUrl.toString() == _urlBase ||
+        currentUrl.toString() == '$_urlBase/en/') {
       return true;
     }
     if (await _controller.canGoBack()) {
